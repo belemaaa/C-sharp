@@ -12,3 +12,4 @@
 /Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.pdb
 /Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.genruntimeconfig.cache
 /Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/ref/CSHARPTUTORIAL.dll
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.sourcelink.json
