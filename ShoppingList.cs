@@ -34,7 +34,7 @@ public class ShoppingList
         int totalPrice = 0;
         if (success)
         {
-            if (input > 0 && input <= shoppingItems.Length)
+            if (input > 0)
             {
                 Console.WriteLine($"Input the IDs of the {input} items you wish to purhase:");
 
@@ -43,6 +43,11 @@ public class ShoppingList
                 {
                     Console.Write($"ID {j + 1}:");
                     bool parsedIDs = int.TryParse(Console.ReadLine(), out result);
+
+                    if (result > shoppingItems.Length){
+                        Console.WriteLine("Invalid input");
+                        break;
+                    }
                     
                     if (parsedIDs == true){
                         totalPrice = totalPrice + prices[result - 1];
