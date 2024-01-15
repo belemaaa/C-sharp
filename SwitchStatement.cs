@@ -23,13 +23,13 @@ public class SwitchStatement
 
             default:
                 Console.WriteLine("Invalid input");
-                break;
+                goto Start;
         }
-
+    Decide:
         Console.WriteLine("Do you want to buy another coffee? \n yes \n no");
         string? input = Console.ReadLine();
 
-        switch (input)
+        switch (input.ToLower())
         {
             case "yes":
                 goto Start;
@@ -39,7 +39,7 @@ public class SwitchStatement
 
             default:
                 Console.WriteLine("Invalid input");
-                break;
+                goto Decide;
         }
     }
 }
