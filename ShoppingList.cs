@@ -48,7 +48,7 @@ public class ShoppingList
                         Console.WriteLine("Invalid input");
                         break;
                     }
-                    
+
                     if (parsedIDs == true){
                         totalPrice = totalPrice + prices[result - 1];
                     }  
