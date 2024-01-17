@@ -64,7 +64,7 @@ public class Employee
         this._LastName = lastName;
     }
 
-    public void PrintFullName()
+    public virtual void PrintFullName()
     {
         Console.WriteLine(this._FirstName + " " + this._LastName);
     }
@@ -72,20 +72,16 @@ public class Employee
 
 public class FullTimeEmployee : Employee
 {
-    public double _YearlySalary;
-
-    public FullTimeEmployee() : base("John", "Doe"){
-        Console.WriteLine("This is a child class");
+    public override void PrintFullName()
+    {
+       Console.WriteLine(this._FirstName + " " + this._LastName + " - Fulltime");
     }
 
 }
 
 public class PartTimeEmployee : Employee
 {
-    public double HourlyRate;
-
-    // method hiding
-    public new void PrintFullName(){
+    public override void PrintFullName(){
         Console.WriteLine(this._FirstName + " " + this._LastName + " - Contractor");
     }
 }
@@ -94,10 +90,10 @@ public class Classes
 {
     public static void ClassesLesson()
     {
-        PartTimeEmployee PTE = new PartTimeEmployee();
+        Employee PTE = new PartTimeEmployee();
         PTE._FirstName = "John";
         PTE._LastName = "Doe";
-        ((Employee)PTE).PrintFullName(); //Type casting
-        
+        PTE.PrintFullName();
+
     }
 }
