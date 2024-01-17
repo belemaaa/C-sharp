@@ -51,35 +51,45 @@ class Circle
 // illustrating inheritance
 public class Employee
 {
-    public string _FirstName;
-    public string _LastName;
-    public string _Email;
+    public string? _FirstName;
+    public string? _LastName;
+    public string? _Email;
+
+    public Employee(){
+        Console.WriteLine("Parent class called");
+    }
+
+    public Employee(string FirstName, string lastName){
+        this._FirstName = FirstName;
+        this._LastName = lastName;
+    }
 
     public void PrintFullName()
     {
-        
+        Console.WriteLine(this._FirstName + " " + this._LastName);
     }
 }
 
 public class FullTimeEmployee : Employee
 {
-    float _YearlySalary;
+    public double _YearlySalary;
+
+    public FullTimeEmployee() : base("John", "Doe"){
+        Console.WriteLine("This is a child class");
+    }
+
 }
 
-public class PartTimeEmployee: Employee{
-    float HourlyRate;
+public class PartTimeEmployee : Employee
+{
+    public double HourlyRate;
 }
 
 public class Classes
 {
     public static void ClassesLesson()
     {
-        Customer customer1 = new Customer();
-        customer1.PrintName();
-
-        Circle circle1 = new Circle(23);
-        double area = circle1.CalculateArea();
-
-        Console.WriteLine($"Area: {area} ");
+        FullTimeEmployee FTE = new FullTimeEmployee();
+        FTE.PrintFullName();
     }
 }

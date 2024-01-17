@@ -29,7 +29,7 @@ public class SwitchStatement
         Console.WriteLine("Do you want to buy another coffee? \n yes \n no");
         string? input = Console.ReadLine();
 
-        switch (input.ToLower())
+        switch (input?.ToLower())
         {
             case "yes":
                 goto Start;
