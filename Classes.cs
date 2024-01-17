@@ -97,6 +97,7 @@ public class Classes
         PartTimeEmployee PTE = new PartTimeEmployee();
         PTE._FirstName = "John";
         PTE._LastName = "Doe";
-        PTE.PrintFullName();
+        ((Employee)PTE).PrintFullName(); //Type casting
+        
     }
 }
