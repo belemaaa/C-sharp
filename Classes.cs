@@ -8,7 +8,6 @@ class Customer
     string _firstname;
     string _lastname;
 
-    // default constructor parameters
     public Customer()
         : this("No firstname provided", "No lastname provided") { }
 
@@ -46,6 +45,29 @@ class Circle
     {
         return _PI * this._Radius * this._Radius;
     }
+}
+
+
+// illustrating inheritance
+public class Employee
+{
+    public string _FirstName;
+    public string _LastName;
+    public string _Email;
+
+    public void PrintFullName()
+    {
+        
+    }
+}
+
+public class FullTimeEmployee : Employee
+{
+    float _YearlySalary;
+}
+
+public class PartTimeEmployee: Employee{
+    float HourlyRate;
 }
 
 public class Classes
