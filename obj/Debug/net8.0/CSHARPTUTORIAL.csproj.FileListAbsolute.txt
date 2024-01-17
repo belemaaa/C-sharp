@@ -1,0 +1,15 @@
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/bin/Debug/net8.0/CSHARPTUTORIAL
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/bin/Debug/net8.0/CSHARPTUTORIAL.deps.json
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/bin/Debug/net8.0/CSHARPTUTORIAL.runtimeconfig.json
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/bin/Debug/net8.0/CSHARPTUTORIAL.dll
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/bin/Debug/net8.0/CSHARPTUTORIAL.pdb
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.AssemblyInfoInputs.cache
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.AssemblyInfo.cs
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.csproj.CoreCompileInputs.cache
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.dll
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/refint/CSHARPTUTORIAL.dll
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.pdb
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.genruntimeconfig.cache
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/ref/CSHARPTUTORIAL.dll
+/Users/PeterItamunoala/Documents/GRACE/csharp-projects/CSHARPTUTORIAL/obj/Debug/net8.0/CSHARPTUTORIAL.sourcelink.json
