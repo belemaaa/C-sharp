@@ -67,12 +67,12 @@ public class GraduateStudent : Student
     public string _ResearchTopic;
 
     public GraduateStudent(
-        string Name, 
-        int Age, 
-        string Email, 
-        int PhoneNumber, 
-        string Department, 
-        string Gender, 
+        string Name,
+        int Age,
+        string Email,
+        int PhoneNumber,
+        string Department,
+        string Gender,
         string ResearchTopic
         )
         : base(Name, Age, Email, PhoneNumber, Department, Gender)
@@ -97,45 +97,92 @@ public class SMS
 
         if (registerStudent == "yes".ToLower())
         {
-        StartReg:
-            Console.WriteLine("How many students do you wish to register?");
-            bool tryStudentNumber = int.TryParse(Console.ReadLine(), out int studentNumber);
+            Console.WriteLine("What type of student do you wish to register? \n1. Regular student \n2. Graduate student");
+            bool tryStudentType = int.TryParse(Console.ReadLine(), out int StudentType);
 
-            if (!tryStudentNumber)
+            if (tryStudentType)
             {
-                Console.WriteLine("Invalid input");
-                goto StartReg;
-            }
-            else
-            {
-                for (int i = 1; i <= studentNumber; i++)
+            StartReg:
+                Console.WriteLine("How many students do you wish to register?");
+                bool tryStudentNumber = int.TryParse(Console.ReadLine(), out int studentNumber);
+
+                string[] Students = new string[studentNumber];
+
+                if (!tryStudentNumber)
                 {
-                    Console.WriteLine($"Fill in the details for student {i}:");
-                    Console.Write("Name: ");
-                    string Name = Console.ReadLine();
-
-                    Console.Write("Age");
-                    bool tryAge = int.TryParse(Console.ReadLine(), out int Age);
-
-                    if (tryAge)
+                    Console.WriteLine("Invalid input");
+                    goto StartReg;
+                }
+                else
+                {
+                    for (int i = 0; i <= studentNumber; i++)
                     {
-                        Console.Write("Phone number:");
-                        bool tryPhone = int.TryParse(Console.ReadLine(), out int PhoneNumber);
+                        Console.WriteLine($"Fill in the details for student {i + 1}:");
+                        Console.Write("Name: ");
+                        string Name = Console.ReadLine();
 
-                        if (tryPhone)
+                    StartAge:
+                        Console.Write("Age");
+                        bool tryAge = int.TryParse(Console.ReadLine(), out int Age);
+
+                        if (tryAge)
                         {
-                            Console.WriteLine("Email");
-                            string Email = Console.ReadLine();
+                        StartPhone:
+                            Console.Write("Phone number:");
+                            bool tryPhone = int.TryParse(Console.ReadLine(), out int PhoneNumber);
 
-                            Console.WriteLine("Department");
-                            string Department = Console.ReadLine();
+                            if (tryPhone)
+                            {
+                                Console.WriteLine("Email");
+                                string Email = Console.ReadLine();
 
-                            Console.WriteLine("Gender");
-                            string Gender = Console.ReadLine();
+                                Console.WriteLine("Department");
+                                string? Department = Console.ReadLine();
+
+                                Console.WriteLine("Gender");
+                                string? Gender = Console.ReadLine();
+
+                                if (StudentType == 2)
+                                {
+                                    Console.WriteLine("Research Topic: ");
+                                    string ResearchTopic = Console.ReadLine();
+
+                                    // create new graduate student
+                                    Student Student = new GraduateStudent(
+                                        Name, Age, Email, PhoneNumber, Department, Gender, ResearchTopic
+                                    );
+                                    Students[i] = Student.ToString();
+                                }
+                                else if (StudentType == 1)
+                                {
+                                    Student Student = new Student(
+                                        Name, Age, Email, PhoneNumber, Department, Gender
+                                    );
+                                    Students[i] = Student.ToString();
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid phone number");
+                                goto StartPhone;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid value for age");
+                            goto StartAge;
                         }
                     }
+                    Console.WriteLine("STUDENT DETAILS ENTERED:");
+                    for (int j = 0; j < Students.Length; j++)
+                    {
+                        Console.WriteLine(Students[j]);
+                    }
+
                 }
             }
         }
+
+
     }
 }
