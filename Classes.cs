@@ -74,9 +74,10 @@ public class Employee
 
 public class FullTimeEmployee : Employee
 {
+    int YearlySal;
     public override void PrintFullName()
     {
-        Console.WriteLine(this._FirstName + " " + this._LastName + " - Fulltime");
+        Console.WriteLine(this._FirstName + " " + this._LastName + this.YearlySal + " - Fulltime");
     }
 
 }
