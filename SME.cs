@@ -31,7 +31,7 @@ public class Student
 
     public virtual void DisplayStudentInformation()
     {
-        Console.WriteLine($"Student ID: {this._StudentID} \n Name: {this._Name} \n Age: {this.Age}");
+        Console.WriteLine($"Student ID: {this._StudentID} \nName: {this._Name} \nAge: {this.Age}");
     }
 }
 
@@ -39,9 +39,15 @@ public class GraduateStudent : Student
 {
     public string _ResearchTopic;
 
+    public GraduateStudent(int StudentID, string Name, int Age, string ResearchTopic)
+        : base(StudentID, Name, Age)
+    {
+        this._ResearchTopic = ResearchTopic;
+    }
+
     public override void DisplayStudentInformation()
     {
-        Console.WriteLine($"Student ID: {this._StudentID} \n Name: {this._Name} \n Age: {this.Age} \n Research Topic: {this._ResearchTopic}");
+        Console.WriteLine($"Student ID: {this._StudentID} \nName: {this._Name} \nAge: {this.Age} \nResearch Topic: {this._ResearchTopic}");
     }
 }
 
@@ -49,13 +55,10 @@ public class SME
 {
     public static void StudentManagementSystem()
     {
-        Student S1 = new Student(101, "James", 19);
-        S1.DisplayStudentInformation();
+        // Student S1 = new Student(101, "James", 19);
+        // S1.DisplayStudentInformation();
 
-        GraduateStudent GS1 = new GraduateStudent();
-        GS1._StudentID = 102;
-        GS1._Name = "John Doe";
-        GS1.Age = 25;
-        GS1._ResearchTopic = "Effect of viruses on human health";
+        Student GS1 = new GraduateStudent(102, "John Doe", 25, "Machine Learning");
+        GS1.DisplayStudentInformation();
     }
 }
