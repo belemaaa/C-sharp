@@ -5,7 +5,7 @@ using static CSHARPTUTORIAL.Calculator;
 using static CSHARPTUTORIAL.SwitchStatement;
 using static CSHARPTUTORIAL.Classes;
 using static CSHARPTUTORIAL.Properties;
-using static CSHARPTUTORIAL.SME;
+using static CSHARPTUTORIAL.SMS;
 
 namespace CSHARPTUTORIAL;
 

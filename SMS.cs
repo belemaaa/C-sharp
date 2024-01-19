@@ -55,7 +55,7 @@ public class Student
 
     public virtual void DisplayStudentInformation()
     {
-        Console.WriteLine($"Student ID: {this._StudentID} \nName: {this._Name} \nAge: {this.Age} \nPhone Number: {this.PhoneNumber}" + 
+        Console.WriteLine($"Student ID: {this._StudentID} \nName: {this._Name} \nAge: {this.Age} \nPhone Number: {this.PhoneNumber}" +
             $"\nDepartment: {this._Department} \nGender: {this._Gender}");
     }
 }
@@ -64,26 +64,22 @@ public class GraduateStudent : Student
 {
     public string _ResearchTopic;
 
-    public GraduateStudent(int StudentID, string Name, int Age, string ResearchTopic)
+    public GraduateStudent(string Name, int Age, string Email, int PhoneNumber, string Department, string Gender, string ResearchTopic)
+    : base(Name, Age, Email, PhoneNumber, Department, Gender)
     {
-        this._Name = Name;
-        this.Age = Age;
         this._ResearchTopic = ResearchTopic;
     }
     public override void DisplayStudentInformation()
     {
-        Console.WriteLine($"Student ID: {this._StudentID} \nName: {this._Name} \nAge: {this.Age} \nResearch Topic: {this._ResearchTopic}");
+        Console.WriteLine($"Student ID: {this.StudentID} \nName: {this._Name} \nAge: {this.Age} \nPhone Number: {this.PhoneNumber}" +
+             $"\nDepartment: {this._Department} \nGender: {this._Gender} \nResearch Topic: {this._ResearchTopic}");
     }
 }
 
-public class SME
+public class SMS
 {
     public static void StudentManagementSystem()
     {
-        // Student S1 = new Student(101, "James", 19);
-        // S1.DisplayStudentInformation();
 
-        GraduateStudent GS1 = new GraduateStudent(102, "Grace", 23, "Machine Learning");
-        GS1.DisplayStudentInformation();
     }
 }
