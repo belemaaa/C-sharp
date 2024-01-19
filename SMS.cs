@@ -80,7 +80,7 @@ public class SMS
     {
         Console.WriteLine("Welcome to the Student Registration Portal");
         Console.WriteLine("Do you wish to register a student?");
-        string registerStudent = Console.ReadLine();
+        string? registerStudent = Console.ReadLine();
 
         if (registerStudent == "yes".ToLower())
         {
@@ -108,7 +108,7 @@ public class SMS
                     {
                         Console.WriteLine($"Fill in the details for student {i + 1}:");
                         Console.Write("Name: ");
-                        string Name = Console.ReadLine();
+                        string? Name = Console.ReadLine();
 
                     StartAge:
                         Console.Write("Age: ");
@@ -116,12 +116,11 @@ public class SMS
 
                         if (tryAge)
                         {
-                        StartPhone:
                             Console.Write("Phone number: ");
-                            string PhoneNumber = Console.ReadLine();
+                            string? PhoneNumber = Console.ReadLine();
 
                             Console.Write("Email: ");
-                            string Email = Console.ReadLine();
+                            string? Email = Console.ReadLine();
 
                             Console.Write("Department: ");
                             string? Department = Console.ReadLine();
@@ -132,19 +131,22 @@ public class SMS
                             if (StudentType == 2)
                             {
                                 Console.Write("Research Topic: ");
-                                string ResearchTopic = Console.ReadLine();
+                                string? ResearchTopic = Console.ReadLine();
 
-                                // create new graduate student
+#pragma warning disable CS8604 // Possible null reference argument.
                                 GraduateStudent Student = new GraduateStudent(
                                     Name, Age, Email, PhoneNumber, Department, Gender, ResearchTopic
                                 );
+#pragma warning restore CS8604 // Possible null reference argument.
                                 GraduateStudents[i] = Student;
                             }
                             else if (StudentType == 1)
                             {
+#pragma warning disable CS8604 // Possible null reference argument.
                                 Student Student = new Student(
                                     Name, Age, Email, PhoneNumber, Department, Gender
                                 );
+#pragma warning restore CS8604 // Possible null reference argument.
                                 Students[i] = Student;
                             }
 
@@ -161,7 +163,7 @@ public class SMS
                     {
                         for (int j = 0; j < Students.Length; j++)
                         {
-                            Console.WriteLine("\n" + Students[j] + ":");
+                            Console.WriteLine("\nStudents");
                             Console.WriteLine($"StudentID: {Students[j].StudentID} \nName: {Students[j]._Name} \nAge: {Students[j].Age}" +
                                 $"\nPhone number: {Students[j]._PhoneNumber} \nEmail: {Students[j]._Email} \nDepartment: {Students[j]._Department} \nGender: {Students[j]._Gender}");
                         }
@@ -170,7 +172,7 @@ public class SMS
                     {
                         for (int j = 0; j < GraduateStudents.Length; j++)
                         {
-                            Console.WriteLine("\n" + GraduateStudents[j] + ":");
+                            Console.WriteLine("Students");
                             Console.WriteLine($"StudentID: {GraduateStudents[j].StudentID} \nName: {GraduateStudents[j]._Name} \nAge: {GraduateStudents[j].Age}" +
                                 $"\nPhone number: {GraduateStudents[j]._PhoneNumber} \nEmail: {GraduateStudents[j]._Email} \nDepartment: {GraduateStudents[j]._Department}" +
                                 $"\nGender: {GraduateStudents[j]._Gender} \nResearch topic: {GraduateStudents[j]._ResearchTopic}");

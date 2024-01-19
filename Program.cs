@@ -13,7 +13,7 @@ class Program
 {
     public static void Main(string[] args)
     {
-        StudentManagementSystem();
+        PropertiesOps();
     }
 
     public static void SimpleMethod(int num1, int num2, out int sum, out int product)
