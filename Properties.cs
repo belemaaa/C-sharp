@@ -4,33 +4,48 @@ namespace CSHARPTUTORIAL;
 public class Students
 {
     private int _ID;
-    private string? _Name;
-    private int PassMark = 35;
+    private string _Name;
+    private int _PassMark = 35;
 
-    public int ID{
-        set{
-            if (value <= 0){
+    public int ID
+    {
+        set
+        {
+            if (value <= 0)
+            {
                 throw new Exception("Student ID cannot be negative");
             }
             this._ID = value;
         }
-        get {
+        get
+        {
             return _ID;
         }
     }
 
     public string Name{
         set{
-            if (value == null || value == ""){
-                throw new Exception("Name cannot be null");
+            if (string.IsNullOrEmpty(value)){
+                throw new Exception("Name value cannot be null or empty");
             }
             this._Name = value;
         }
         get{
-            return _Name;
+            if (string.IsNullOrEmpty(this._Name)){
+                return "No Name";
+            }
+            else{
+                return this._Name;
+            }   
         }
     }
-} 
+
+    public int PassMark{
+        get{
+            return this._PassMark;
+        }
+    }
+}
 
 public class Properties
 {
@@ -38,7 +53,6 @@ public class Properties
     {
         Students s1 = new Students();
         s1.ID = 9;
-
-        Console.WriteLine(s1.ID);
+        Console.WriteLine($"Name: {s1.Name} ");
     }
 }
