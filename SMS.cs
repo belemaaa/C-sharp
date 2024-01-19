@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization.Metadata;
+
 namespace CSHARPTUTORIAL;
 
 public class Student
@@ -56,7 +58,7 @@ public class Student
     public virtual void DisplayStudentInformation()
     {
         Console.WriteLine($"Student ID: {this._StudentID} \nName: {this._Name} \nAge: {this.Age} \nPhone Number: {this.PhoneNumber}" +
-            $"\nDepartment: {this._Department} \nGender: {this._Gender}");
+                          $"\nDepartment: {this._Department} \nGender: {this._Gender}");
     }
 }
 
@@ -64,15 +66,24 @@ public class GraduateStudent : Student
 {
     public string _ResearchTopic;
 
-    public GraduateStudent(string Name, int Age, string Email, int PhoneNumber, string Department, string Gender, string ResearchTopic)
-    : base(Name, Age, Email, PhoneNumber, Department, Gender)
+    public GraduateStudent(
+        string Name, 
+        int Age, 
+        string Email, 
+        int PhoneNumber, 
+        string Department, 
+        string Gender, 
+        string ResearchTopic
+        )
+        : base(Name, Age, Email, PhoneNumber, Department, Gender)
     {
         this._ResearchTopic = ResearchTopic;
     }
+
     public override void DisplayStudentInformation()
     {
         Console.WriteLine($"Student ID: {this.StudentID} \nName: {this._Name} \nAge: {this.Age} \nPhone Number: {this.PhoneNumber}" +
-             $"\nDepartment: {this._Department} \nGender: {this._Gender} \nResearch Topic: {this._ResearchTopic}");
+                          $"\nDepartment: {this._Department} \nGender: {this._Gender} \nResearch Topic: {this._ResearchTopic}");
     }
 }
 
@@ -80,6 +91,51 @@ public class SMS
 {
     public static void StudentManagementSystem()
     {
+        Console.WriteLine("Welcome to the Student Registration Portal");
+        Console.WriteLine("Do you wish to register a student?");
+        string registerStudent = Console.ReadLine();
 
+        if (registerStudent == "yes".ToLower())
+        {
+        StartReg:
+            Console.WriteLine("How many students do you wish to register?");
+            bool tryStudentNumber = int.TryParse(Console.ReadLine(), out int studentNumber);
+
+            if (!tryStudentNumber)
+            {
+                Console.WriteLine("Invalid input");
+                goto StartReg;
+            }
+            else
+            {
+                for (int i = 1; i <= studentNumber; i++)
+                {
+                    Console.WriteLine($"Fill in the details for student {i}:");
+                    Console.Write("Name: ");
+                    string Name = Console.ReadLine();
+
+                    Console.Write("Age");
+                    bool tryAge = int.TryParse(Console.ReadLine(), out int Age);
+
+                    if (tryAge)
+                    {
+                        Console.Write("Phone number:");
+                        bool tryPhone = int.TryParse(Console.ReadLine(), out int PhoneNumber);
+
+                        if (tryPhone)
+                        {
+                            Console.WriteLine("Email");
+                            string Email = Console.ReadLine();
+
+                            Console.WriteLine("Department");
+                            string Department = Console.ReadLine();
+
+                            Console.WriteLine("Gender");
+                            string Gender = Console.ReadLine();
+                        }
+                    }
+                }
+            }
+        }
     }
 }
