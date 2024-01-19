@@ -55,11 +55,13 @@ public class Employee
     public string? _LastName;
     public string? _Email;
 
-    public Employee(){
+    public Employee()
+    {
         Console.WriteLine("Parent class called");
     }
 
-    public Employee(string FirstName, string lastName){
+    public Employee(string FirstName, string lastName)
+    {
         this._FirstName = FirstName;
         this._LastName = lastName;
     }
@@ -74,14 +76,15 @@ public class FullTimeEmployee : Employee
 {
     public override void PrintFullName()
     {
-       Console.WriteLine(this._FirstName + " " + this._LastName + " - Fulltime");
+        Console.WriteLine(this._FirstName + " " + this._LastName + " - Fulltime");
     }
 
 }
 
 public class PartTimeEmployee : Employee
 {
-    public override void PrintFullName(){
+    public override void PrintFullName()
+    {
         Console.WriteLine(this._FirstName + " " + this._LastName + " - Contractor");
     }
 }
