@@ -54,5 +54,12 @@ public class Properties
         Students s1 = new Students();
         s1.ID = 9;
         Console.WriteLine($"Name: {s1.Name} ");
+
+        //object instantiation method
+        Students s2 = new Students
+        {
+            ID = 10,
+            Name = "Jay"
+        };
     }
 }
