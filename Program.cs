@@ -6,6 +6,7 @@ using static CSHARPTUTORIAL.SwitchStatement;
 using static CSHARPTUTORIAL.Classes;
 using static CSHARPTUTORIAL.Properties;
 using static CSHARPTUTORIAL.SMS;
+using static CSHARPTUTORIAL.Interfaces;
 
 namespace CSHARPTUTORIAL;
 
@@ -13,8 +14,10 @@ class Program
 {
     public static void Main(string[] args)
     {
-        PropertiesOps();
+        InterfaceOps();
     }
+
+
 
     public static void SimpleMethod(int num1, int num2, out int sum, out int product)
     {
