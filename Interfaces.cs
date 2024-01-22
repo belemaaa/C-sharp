@@ -26,11 +26,29 @@ class Customers : ICustomers, ICustomers2
     }
 }
 
+// abstract class implememtation
+abstract class AS
+{
+    public abstract void Print();
+}
+
+class ASImplementation : AS
+{
+    public override void Print()
+    {
+        Console.WriteLine("Overriding an abstract class method");
+    }
+}
+
+
 public class Interfaces
 {
     public static void InterfaceOps()
     {
         ICustomers2 C1 = new Customers();
         C1.InterfaceMethod();
+
+        AS Customer = new ASImplementation();
+        Customer.Print();
     }
 }
