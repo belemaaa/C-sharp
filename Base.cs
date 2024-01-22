@@ -94,15 +94,20 @@ public class Base
         }
     }
 
+    // character input validations
     public static bool IsBinaryNumber(string number)
     {
         int n = 0;
-        if (string.IsNullOrEmpty(number)) return false;
+        if (string.IsNullOrEmpty(number))
+            return false;
+
         foreach (char num in number)
         {
             bool isANumber = int.TryParse(num.ToString(), out n);
-            if (isANumber == false) return false;
-            if (n > 1) return false;
+            if (isANumber == false)
+                return false;
+            if (n > 1)
+                return false;
         }
         return true;
     }
@@ -110,15 +115,32 @@ public class Base
     public static bool IsDecimalNumber(string number)
     {
         int n = 0;
-        if (string.IsNullOrEmpty(number)) return false;
+        if (string.IsNullOrEmpty(number))
+            return false;
+
         foreach (char num in number)
         {
             bool isANumber = int.TryParse(num.ToString(), out n);
-            if (isANumber == false) return false;
+            if (isANumber == false)
+                return false;
         }
         return true;
     }
 
+    public static bool IsHexadecimalNumber(string number)
+    {
+        if (string.IsNullOrEmpty(number))
+            return false;
+
+        foreach (char ch in number)
+        {
+            if (!(char.IsDigit(ch) || (ch >= 'a' && ch <= 'f') || (ch >= 'A' && ch <= 'F')))
+                return false;
+        }
+        return true;
+    }
+
+    // base converters
     public static StringBuilder BaseTenToTwoConverter(string value)
     {
         StringBuilder result = new StringBuilder();
@@ -141,7 +163,7 @@ public class Base
 
         for (int i = value.Length - 1; i >= 0; i--)
         {
-            int convertedValue = (int)Math.Pow(2, i) * int.Parse(value[j].ToString()) ;
+            int convertedValue = (int)Math.Pow(2, i) * int.Parse(value[j].ToString());
 
             result += convertedValue;
             j++;
