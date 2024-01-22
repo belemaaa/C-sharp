@@ -1,14 +1,28 @@
 namespace CSHARPTUTORIAL;
 
+
+// interfaces are public by default
 interface ICustomers
 {
-    void Print();
+    void InterfaceMethod();
 }
 
-class Customers : ICustomers
+interface ICustomers2
 {
-    public void Print(){
-        Console.WriteLine("Interface implementation");
+    void InterfaceMethod();
+}
+
+class Customers : ICustomers, ICustomers2
+{
+    // explicit interface implementation
+    void ICustomers.InterfaceMethod()
+    {
+        Console.WriteLine("Interface 1");
+    }
+
+    void ICustomers2.InterfaceMethod()
+    {
+        Console.WriteLine("Interface 2");
     }
 }
 
@@ -16,7 +30,7 @@ public class Interfaces
 {
     public static void InterfaceOps()
     {
-        Customers C1 = new Customers();
-        C1.Print();
+        ICustomers2 C1 = new Customers();
+        C1.InterfaceMethod();
     }
 }
