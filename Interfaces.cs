@@ -15,7 +15,7 @@ interface ICustomers2
 class Customers : ICustomers, ICustomers2
 {
     // explicit interface implementation
-    void ICustomers.InterfaceMethod()
+    public void InterfaceMethod()
     {
         Console.WriteLine("Interface 1");
     }
