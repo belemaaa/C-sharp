@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSHARPTUTORIAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e412f77f1f344c053fa5b8002a72e6a259ec20b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95303d98656fa297a79c6d51b7d1635992f620ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSHARPTUTORIAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSHARPTUTORIAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
