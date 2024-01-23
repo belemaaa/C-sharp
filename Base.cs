@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using System.Text;
 
 namespace CSHARPTUTORIAL;
@@ -83,7 +84,7 @@ public class Base
                             Console.WriteLine("Calculation result: ");
                             Console.WriteLine("------------------");
 
-                            Console.WriteLine($"{baseValue} to base 10 = {BaseTenToSixteenConverter(baseValue)}");
+                            Console.WriteLine($"{baseValue} to base 16 = {BaseTenToSixteenConverter(baseValue)}");
                         }
                         else
                         {
@@ -91,6 +92,28 @@ public class Base
                             goto start;
                         }
                         break;
+
+                    case 4:
+                        Console.WriteLine("To convert from base 16 to base 10, input a number in base 16");
+                        baseValue = Console.ReadLine();
+
+                        success = IsHexadecimalNumber(baseValue);
+                        if (success)
+                        {
+                            Console.WriteLine($"Selected option: Base 16 to 10");
+                            Console.WriteLine($"Value entered: {baseValue}");
+                            Console.WriteLine("Calculation result: ");
+                            Console.WriteLine("------------------");
+
+                            Console.WriteLine($"{baseValue} to base 10 = {BaseSixteenToTenConverter(baseValue)}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Value entered cannot be read.");
+                            goto start;
+                        }
+                        break;
+
 
                     default:
                         Console.WriteLine("Invalid input");
@@ -236,31 +259,52 @@ public class Base
         return result;
     }
 
-    // public static string BaseTenToSixteenConverter(string value)
-    // {
-    //     string result = "";
-    //     int j = 0;
-    //     int a = 10;
-    //     int b = 11;
-    //     int c = 12;
-    //     int d = 13;
-    //     int e = 14;
-    //     int f = 15;
+    public static int BaseSixteenToTenConverter(string value)
+    {
+        int result = 0;
 
-    //     foreach (char ch in value)
-    //     {
-    //         if (char.IsDigit(ch)) 
-    //             return ch.ToString();
+        for (int i = value.Length - 1; i >= 0; i--)
+        {
+            char CurrentValue = value[i];
+            int newValue = 0;
 
-    //         if (ch == 'a')
-    //     }
+            // bool IsANumber = int.TryParse(value[i].ToString(), out int num);
+            if (char.IsDigit(CurrentValue))
+            {
+                newValue = int.Parse(CurrentValue.ToString());
+            }
+            else
+            {
+                switch (char.ToUpper(CurrentValue))
+                {
+                    case 'A':
+                        newValue = 10;
+                        break;
+                    case 'B':
+                        newValue = 11;
+                        break;
+                    case 'C':
+                        newValue = 12;
+                        break;
+                    case 'D':
+                        newValue = 13;
+                        break;
+                    case 'E':
+                        newValue = 14;
+                        break;
+                    case 'F':
+                        newValue = 15;
+                        break;
+                }
+            }
+            int output = newValue * (int)Math.Pow(16, value.Length -1 -i);
+            result += output;
 
-    //     while (value.Length > 0)
-    //     {
-
-    //     }
-    //     return result;
-    // }
+            Console.WriteLine($"Value entered: {newValue} * 16 ^ {value.Length - 1 - i}");
+        }
+        return result;
+    }
 
 }
+
 
