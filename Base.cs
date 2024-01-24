@@ -268,7 +268,6 @@ public class Base
             char CurrentValue = value[i];
             int newValue = 0;
 
-            // bool IsANumber = int.TryParse(value[i].ToString(), out int num);
             if (char.IsDigit(CurrentValue))
             {
                 newValue = int.Parse(CurrentValue.ToString());
@@ -297,10 +296,8 @@ public class Base
                         break;
                 }
             }
-            int output = newValue * (int)Math.Pow(16, value.Length -1 -i);
+            int output = newValue * (int)Math.Pow(16, value.Length - 1 - i);
             result += output;
-
-            Console.WriteLine($"Value entered: {newValue} * 16 ^ {value.Length - 1 - i}");
         }
         return result;
     }

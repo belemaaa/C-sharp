@@ -7,7 +7,7 @@ using static CSHARPTUTORIAL.Classes;
 using static CSHARPTUTORIAL.Properties;
 using static CSHARPTUTORIAL.SMS;
 using static CSHARPTUTORIAL.Interfaces;
-using static CSHARPTUTORIAL.Base;
+using static CSHARPTUTORIAL.BaseToBase;
 
 namespace CSHARPTUTORIAL;
 
@@ -15,7 +15,7 @@ class Program
 {
     public static void Main(string[] args)
     {
-        BaseConversion();
+        BaseToBaseOps();
     }
 
 
