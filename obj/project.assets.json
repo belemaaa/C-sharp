@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/graceitamunoala/Library/Mobile Documents/com~apple~CloudDocs/Work/C-sharp/CSHARPTUTORIAL.csproj",
+      "projectUniqueName": "/Users/graceitamunoala/Documents/C-sharp/CSHARPTUTORIAL.csproj",
       "projectName": "CSHARPTUTORIAL",
-      "projectPath": "/Users/graceitamunoala/Library/Mobile Documents/com~apple~CloudDocs/Work/C-sharp/CSHARPTUTORIAL.csproj",
+      "projectPath": "/Users/graceitamunoala/Documents/C-sharp/CSHARPTUTORIAL.csproj",
       "packagesPath": "/Users/graceitamunoala/.nuget/packages/",
-      "outputPath": "/Users/graceitamunoala/Library/Mobile Documents/com~apple~CloudDocs/Work/C-sharp/obj/",
+      "outputPath": "/Users/graceitamunoala/Documents/C-sharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/graceitamunoala/.nuget/NuGet/NuGet.Config"

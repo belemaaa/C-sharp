@@ -1,13 +1,7 @@
 ﻿using System.Data;
 using System;
-using static CSHARPTUTORIAL.ShoppingList;
-using static CSHARPTUTORIAL.Calculator;
-using static CSHARPTUTORIAL.SwitchStatement;
-using static CSHARPTUTORIAL.Classes;
-using static CSHARPTUTORIAL.Properties;
-using static CSHARPTUTORIAL.SMS;
-using static CSHARPTUTORIAL.Interfaces;
-using static CSHARPTUTORIAL.BaseToBase;
+using static CSHARPTUTORIAL.Exceptionhandling;
+using System.Reflection;
 
 namespace CSHARPTUTORIAL;
 
@@ -15,7 +9,7 @@ class Program
 {
     public static void Main(string[] args)
     {
-        BaseToBaseOps();
+        EH();
     }
 
 
