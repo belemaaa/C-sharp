@@ -1,7 +1,6 @@
 ﻿using System.Data;
 using System;
-using static CSHARPTUTORIAL.Exceptionhandling;
-using System.Reflection;
+using static CSHARPTUTORIAL.QuizApp;
 
 namespace CSHARPTUTORIAL;
 
@@ -9,7 +8,7 @@ class Program
 {
     public static void Main(string[] args)
     {
-        EH();
+        Quiz();
     }
 
 
