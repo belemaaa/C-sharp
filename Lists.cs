@@ -2,11 +2,16 @@ namespace CSHARPTUTORIAL;
 using System.Collections.Generic;
 
 
-public class CustomerList
+public class CustomerList : IComparable<CustomerList>
 {
     public int id { get; set; }
     public string name { get; set; }
     public int salary { get; set; }
+
+    public int CompareTo(CustomerList? other)
+    {
+        return this.salary.CompareTo(other.salary);
+    }
 }
 public class Lists
 {
@@ -48,6 +53,17 @@ public class Lists
         {
             Console.WriteLine($"id: {c.id}");
         }
+
+        customerlist.Sort(); //for this sort method to work on a class list, the class needs to provide implementation for the IComparable method as done above
+        customerlist.Reverse();
+
+
+
+        // defining an integer list
+        List<int> numbers = new List<int>() { 1, 2, 3, 4, 2, 4, 5, 3 };
+        numbers.Add(5);
+        numbers.Sort(); //sorts the list in ascending order
+        numbers.Reverse(); //sorts the list in descending order
     }
 
 
