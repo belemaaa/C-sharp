@@ -33,13 +33,26 @@ public class Lists
             salary = 1000
         };
 
-        List<CustomerList> customers = new List<CustomerList>(2);
+        //lists are strongly typed. You can only append a customer object or a related object (through inheritance) to this list
+        List<CustomerList> customers = new List<CustomerList>(); 
         customers.Add(customer1);
         customers.Add(customer2);
         customers.Add(customer3);
+        customers.Insert(0, customer3);
 
-        CustomerList c = customers[0];
-        Console.WriteLine($"ID: {c.id}, Name: {c.name}, salary: {c.salary}");
+
+        // looping through the list
+        foreach (CustomerList c in customers)
+        {
+            Console.WriteLine($"ID: {c.id}, Name: {c.name}, salary: {c.salary}");
+        }
+
+        for (int i = 0; i < customers.Count; i++)
+        {
+            CustomerList c = customers[i];
+            Console.WriteLine($"ID: {c.id}, Name: {c.name}, salary: {c.salary}");
+        }
+
     }
 
 
