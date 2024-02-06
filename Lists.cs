@@ -25,6 +25,21 @@ public class Lists
             name = "David",
             salary = 1000
         };
+
+        CustomerList customer3 = new CustomerList()
+        {
+            id = 121,
+            name = "James",
+            salary = 1000
+        };
+
+        List<CustomerList> customers = new List<CustomerList>(2);
+        customers.Add(customer1);
+        customers.Add(customer2);
+        customers.Add(customer3);
+
+        CustomerList c = customers[0];
+        Console.WriteLine($"ID: {c.id}, Name: {c.name}, salary: {c.salary}");
     }
 
 

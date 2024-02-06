@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using System;
-using static CSHARPTUTORIAL.QuizApp;
+using static CSHARPTUTORIAL.Lists;
 
 namespace CSHARPTUTORIAL;
 
@@ -8,7 +8,7 @@ class Program
 {
     public static void Main(string[] args)
     {
-        Quiz();
+        ListsOps();
     }
 
 
