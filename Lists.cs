@@ -34,25 +34,20 @@ public class Lists
         };
 
         //lists are strongly typed. You can only append a customer object or a related object (through inheritance) to this list
-        List<CustomerList> customers = new List<CustomerList>(); 
+        List<CustomerList> customers = new List<CustomerList>();
         customers.Add(customer1);
         customers.Add(customer2);
         customers.Add(customer3);
         customers.Insert(0, customer3);
 
+        CustomerList existing_customer = customers.Find(cust => cust.id == 121);
+        Console.WriteLine($"id: {existing_customer.id}");
 
-        // looping through the list
-        foreach (CustomerList c in customers)
+        List<CustomerList> customerlist = customers.FindAll(cust => cust.salary > 100);
+        foreach (CustomerList c in customerlist)
         {
-            Console.WriteLine($"ID: {c.id}, Name: {c.name}, salary: {c.salary}");
+            Console.WriteLine($"id: {c.id}");
         }
-
-        for (int i = 0; i < customers.Count; i++)
-        {
-            CustomerList c = customers[i];
-            Console.WriteLine($"ID: {c.id}, Name: {c.name}, salary: {c.salary}");
-        }
-
     }
 
 
